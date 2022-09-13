@@ -5,23 +5,28 @@ const options = {
 		'X-RapidAPI-Host': 'ronreiter-meme-generator.p.rapidapi.com'
 	}
 };
-let imgsrc;
-let objectURl;
-fetch('https://ronreiter-meme-generator.p.rapidapi.com/meme?top=Top%20Text&bottom=Bottom%20Text&meme=Condescending-Wonka&font_size=50&font=Impact', options)
-	.then(response => response.blob())
-	.then(imageBlob => {imgsrc = imageBlob;
-        const objectURl = URL.createObjectURL(imageBlob)
-        console.log(objectURl)
+// let imgsrc;
+// let objectURl;
+// fetch('https://ronreiter-meme-generator.p.rapidapi.com/meme?top=Top%20Text&bottom=Bottom%20Text&meme=Condescending-Wonka&font_size=50&font=Impact', options)
+// 	.then(response => response.blob())
+// 	.then(imageBlob => {imgsrc = imageBlob;
+//         const objectURl = URL.createObjectURL(imageBlob)
+//         console.log(objectURl)
         
-        const image = document.createElement("img")
-        image.src = objectURl
+//         const image = document.createElement("img")
+//         image.src = objectURl
 
-        document.body.appendChild(image)
+//         document.body.appendChild(image)
         
     
-    })
+//     })
     
+// 	.catch(err => console.error(err));
+
+
+
+
+fetch('https://ronreiter-meme-generator.p.rapidapi.com/images', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
 	.catch(err => console.error(err));
-
-
-//
