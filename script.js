@@ -6,27 +6,28 @@ const options = {
   }
 };
 
-// let imgsrc;
-// let objectURL;
-
-// let imageLookEl = document.querySelector("#image-look")
-
-// fetch('https://ronreiter-meme-generator.p.rapidapi.com/meme?top=Top%20Text&bottom=Bottom%20Text&meme=Condescending-Wonka&font_size=50&font=Impact', options)
-//   .then(response => response.blob())
-//   .then(imageBlob => {
-//     imgsrc = imageBlob;
-//     const objectURL = URL.createObjectURL(imageBlob)
-//     console.log(objectURL)
-
-//     imageLookEl.src = objectURL
-
-
-
-//   })
-
-//   .catch(err => console.error(err));
-
   fetch('https://ronreiter-meme-generator.p.rapidapi.com/images', options)
 	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+	.then(memes => {
+		console.log(memes)
+		let list = document.querySelector("#list")
+		
+		for (let i = 0; i < 25; i++) {
+			
+			let li = document.createElement("li")
+		li.textContent = memes[i]
+		list.appendChild(li)
+		}
+        list.addEventListener("click",function(response){
+
+
+
+
+
+        }
+		
+	})
+	//.catch(err => console.error(err));
+
+
+	
