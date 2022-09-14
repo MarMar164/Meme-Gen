@@ -1,46 +1,21 @@
-$(document).ready(function() {
-	// Initiate gifLoop for set interval
-	var refresh;
-	// Duration count in seconds
-	const duration = 1000 * 10;
-	// API defaults
-	const giphy = {
-		baseURL: "https://api.giphy.com/v1/gifs/",
-		apiKey: "0UTRbFtkMxAplrohufYco5IY74U8hOes",
-		tag: "fail",
-		type: "random"
-	};
-	// this targets gif container
-	const $gif_wrap = $("#gif-wrap");
-	// Giphy API URL
-	let giphyURL = encodeURI(
-		giphy.baseURL +
-			giphy.type +
-			"?api_key=" +
-			giphy.apiKey +
-			"&tag=" +
-			giphy.tag 
-
-	);
-
-	// Call Giphy API and render data
-	var newGif = () => $.getJSON(giphyURL, json => renderGif(json.data));
-
-	// Display Gif in gif wrap container
-	var renderGif = _giphy => {
-		console.log(_giphy);
-		$gif_wrap.css({
-			"background-image": 'url("' + _giphy.images.original.url + '")'
-		});
-
-		
-	};
+/////////////////  values for url params
+const apiKey= 'vzEl5CaRrCqsxr4VrNW4LKitmkTfXLl1';
+var tag= 'cats';
+var offset= Math.floor(Math.random()*4500);   //api returns 50 gifs (max). this adjusts index to make results appear random
+var path= `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${tag}&offset=${offset}`;
+       
+////////////////  make e-z wordz
 
 
-	newGif();
-	
-	
-	const newGifButton = $('#new-gif');
-	
-	newGifButton.click(newGif)
-});
+
+////////////////  callback
+fetch(path).then(function(resp){
+	return resp.json()
+}).then(function(json){
+	console.log(json.data[0].images);
+	json.data.forEach(function(obj){
+		console.log(obj.images.looping.mp4)
+	})
+}).catch(function(err) {
+	console.log(err.message)
+})
