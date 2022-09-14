@@ -12,16 +12,47 @@
 </head>
 
 <body>
-    <div class="card mb-3">
-        <img class="img-size" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Fk18s9g242rL3295wRmHZbiCk53tE2JQTQ&usqp=CAU" class="card-img-top" alt="best free meme generator">
-        <div class="card-body">
-          <h2 class="card-title">Meme Generator</h2>
-          <p class="card-text">This is a meme generator click the arrows to select different memes or switch over to gifs!</p>
-          <p class="card-text"><small class="text-muted"></small></p>
+
+    <!--header-->
+    <header>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">Meme Generator</h2>
+                <p class="card-text">This is a meme generator click the arrows to select different memes or switch over
+                    to
+                    gifs!</p>
+                <p class="card-text"><small class="text-muted">screenshot to save</small></p>
+            </div>
         </div>
-      </div>
-     
-      
+    </header>
+
+    <!--Button That sends you to the gif page we have-->
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <a href=""> <button type="button" class="btn btn-secondary">Gif Generator</button> </a>
+    </div>
+
+    <main>
+        <!-- Name of the meme-->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Meme Name" aria-label="Meme Name" aria-describedby="button-addon2">
+        </div>
+    </main>
+
+    <!--Place were meme will pop up with button to switch meme to the next or last meme-->
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary">Last</button>
+        <img class="rounded mx-auto" id="image-look" alt="Funny Meme">
+        <button type="button" class="btn btn-secondary">Next</button>
+    </div>
+
+    <!-- Button to go to the edditing page-->
+    <div class="card text-center">
+        <div class="card-body">
+            <p class="card-text">Click here to edit the top text or bottom text of your meme</p>
+            <a href="#" class="btn btn-primary">Editor</a>
+        </div>
+    </div>
+
 
 
     <script src="./script.js"></script>
