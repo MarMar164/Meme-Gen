@@ -11,23 +11,58 @@ const options = {
 	.then(memes => {
 		console.log(memes)
 		let list = document.querySelector("#list")
-		
-		for (let i = 0; i < 25; i++) {
-			
+
+		for (let i = 0; i < 50; i++) {
+
 			let li = document.createElement("li")
-		li.textContent = memes[i]
-		list.appendChild(li)
+			li.textContent = memes[i]
+			list.appendChild(li)
 		}
-        list.addEventListener("click",function(response){
 
-
-
-
-
-        }
-		
 	})
 	//.catch(err => console.error(err));
 
+list.addEventListener("click", function (event) {
+	console.log(event.target)
+	// console.log(event.target.innerHTML)
+	let searchTerm = event.target.innerHTML
 
-	
+	fetch(`https://ronreiter-meme-generator.p.rapidapi.com/meme?&meme=${searchTerm}&font_size=50&font=Impact`, options)
+		.then(response => {
+			console.log(response)
+			return response.blob()
+		})
+		.then(imageBlob => {
+			imgsrc = imageBlob;
+			const objectURl = URL.createObjectURL(imageBlob)
+			console.log(objectURl)
+
+			let reader = new FileReader();
+			console.log(reader.readAsDataURL(imageBlob));
+
+			reader.onload = function(){
+			localStorage.setItem("imageToEdit",this.result);
+							}
+
+			const image = document.createElement("img")
+			image.src = objectURl
+
+			document.body.appendChild(image)
+
+
+		})
+
+		.catch(err => console.error(err));
+
+
+
+
+})
+
+// let image = document.querySelector("li")
+// image.addEventListener("click", function (event){
+// 	console.log(event.target)
+
+
+// })
+
