@@ -1,13 +1,23 @@
 .card-title{
     text-align: center;
+   
 }
 
 .card-text{
     text-align: center;
+    
 }
 
 img{
     max-width: 4000px;
     max-height: 300px;
     border-radius: 8px;
+}
+body{
+    background-color: rgb(43, 104, 226);
+    
+}
+.nav-link{
+
+    color: black;
 }
