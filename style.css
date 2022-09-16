@@ -5,19 +5,14 @@
 
  .card-text{
     text-align: center;
-<<<<<<< HEAD
  }
-=======
-    
-}
->>>>>>> c0f658f6d12046f03625ff3281332d6e94bc794a
 
 .img-size  {
     max-width: 4000px;
     max-height: 300px;
     border-radius: 8px;
 }
-<<<<<<< HEAD
+
 
 .Btn-displying{
     display: inline-block;
@@ -28,13 +23,20 @@
  text-align: center;
  margin-top: 5rem;
 }
-=======
+
 body{
-    background-color: rgb(43, 104, 226);
+    background-color: black;
+    
     
 }
 .nav-link{
 
     color: black;
 }
->>>>>>> c0f658f6d12046f03625ff3281332d6e94bc794a
+
+
+#list{
+    color: azure;
+}
+
+
