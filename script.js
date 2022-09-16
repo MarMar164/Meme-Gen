@@ -61,12 +61,8 @@ list.addEventListener("click", function (event) {
 
 
 
+
+
 })
 
-// let image = document.querySelector("li")
-// image.addEventListener("click", function (event){
-// 	console.log(event.target)
-
-
-// })
 

@@ -14,10 +14,15 @@ img{
     border-radius: 8px;
 }
 body{
-    background-color: rgb(43, 104, 226);
+    background-color: black;
+    
     
 }
 .nav-link{
 
     color: black;
+}
+
+#list{
+    color: azure;
 }
