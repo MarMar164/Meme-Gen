@@ -42,6 +42,7 @@ list.addEventListener("click", function (event) {
 
 			reader.onload = function(){
 			localStorage.setItem("imageToEdit",this.result);
+			localStorage.setItem("imageName",event.target.textContent)
 							}
 
 			const image = document.createElement("img")
