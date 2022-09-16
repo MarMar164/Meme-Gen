@@ -1,16 +1,12 @@
 const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '2b8b174b96msh600362b3da6d775p1cf2cbjsn8a0026c19487',
-		'X-RapidAPI-Host': 'ronreiter-meme-generator.p.rapidapi.com'
-	}
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '2b8b174b96msh600362b3da6d775p1cf2cbjsn8a0026c19487',
+    'X-RapidAPI-Host': 'ronreiter-meme-generator.p.rapidapi.com'
+  }
 };
 
-
-
-
-
-fetch('https://ronreiter-meme-generator.p.rapidapi.com/images', options)
+  fetch('https://ronreiter-meme-generator.p.rapidapi.com/images', options)
 	.then(response => response.json())
 	.then(memes => {
 		console.log(memes)
@@ -24,7 +20,7 @@ fetch('https://ronreiter-meme-generator.p.rapidapi.com/images', options)
 		}
 
 	})
-	.catch(err => console.error(err));
+	//.catch(err => console.error(err));
 
 list.addEventListener("click", function (event) {
 	console.log(event.target)
@@ -46,6 +42,7 @@ list.addEventListener("click", function (event) {
 
 			reader.onload = function(){
 			localStorage.setItem("imageToEdit",this.result);
+			localStorage.setItem("imageName",event.target.textContent)
 							}
 
 			const image = document.createElement("img")

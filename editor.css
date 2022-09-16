@@ -1,6 +1,6 @@
+
 .card-title{
     text-align: center;
-   
 }
 
  .card-text{
@@ -13,7 +13,6 @@
     border-radius: 8px;
 }
 
-
 .Btn-displying{
     display: inline-block;
     padding: 10px;
@@ -23,20 +22,3 @@
  text-align: center;
  margin-top: 5rem;
 }
-
-body{
-    background-color: black;
-    
-    
-}
-.nav-link{
-
-    color: black;
-}
-
-
-#list{
-    color: azure;
-}
-
-
