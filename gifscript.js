@@ -27,7 +27,7 @@ function gifWall(query) {
 
 	/////////////////  values for url params, make e-z wordz
 	const apiKey = 'vzEl5CaRrCqsxr4VrNW4LKitmkTfXLl1';
-	var offset = Math.floor(Math.random() * 4500);   //api returns 50 gifs (max). this adjusts index to make results appear random
+	var offset = Math.floor(Math.random() * 100);   //api returns 50 gifs (max). this adjusts index to make results appear random
 	var path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&offset=${offset}`;
 
 
